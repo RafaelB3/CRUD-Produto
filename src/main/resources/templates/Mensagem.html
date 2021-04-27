@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+	<span th:text="${mensagem}">Produto cadastrado ou salvo com
+		sucesso</span>
+</div>
+
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+	<div th:text="${#fields.detailedErrors()}">
+		<span th:text="${detailedError.message}"> </span>
+	</div>
+
+</div>
+
+</html>
